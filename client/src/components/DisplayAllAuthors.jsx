@@ -17,7 +17,7 @@ const DisplayAllAuthors = (props) => {
     return(
         <div className="containter">
             <Link to="/authors/add">Add an Author</Link>
-            <table>
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>Authors</th>
@@ -29,8 +29,8 @@ const DisplayAllAuthors = (props) => {
                         <tr key={index}>
                             <td>{author.name}</td>
                             <td>
-                                <Link to={`/authors/edit/${author._id}`}>Edit</Link>
-                                <button onClick={() => deleteHandler(author._id)}>Delete</button>
+                                <Link className="btn btn-secondary" to={`/authors/edit/${author._id}`}>Edit</Link>
+                                <button className="btn btn-primary m-2"onClick={() => deleteHandler(author._id)}>Delete</button>
                             </td>
                         </tr>
             
