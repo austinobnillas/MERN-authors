@@ -41,12 +41,12 @@ const NewAuthorForm = (props) => {
                     <h3>Add a new author:</h3>
                 </div>
                 <div>
-                    <label htmlFor="authorName">Name: </label>
-                    <input type="text" name="authorName" onChange={(e) => setName(e.target.value)}/>
+                    <label className="form-label" htmlFor="authorName">Name: </label>
+                    <input className="form-control" type="text" name="authorName" onChange={(e) => setName(e.target.value)}/>
                 </div>
                 <div>
-                    <Link to="/authors">Cancel</Link>
-                    <input type="submit" value="Submit" />
+                    <Link className="btn btn-secondary m-2" to="/authors">Cancel</Link>
+                    <input className="btn btn-primary m-2" type="submit" value="Submit" />
                 </div>
             </form>
         </div>

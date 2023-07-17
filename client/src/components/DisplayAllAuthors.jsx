@@ -30,7 +30,7 @@ const DisplayAllAuthors = (props) => {
                             <td>{author.name}</td>
                             <td>
                                 <Link className="btn btn-secondary" to={`/authors/edit/${author._id}`}>Edit</Link>
-                                <button className="btn btn-primary m-2"onClick={() => deleteHandler(author._id)}>Delete</button>
+                                <button className="btn btn-primary m-2" onClick={() => deleteHandler(author._id)}>Delete</button>
                             </td>
                         </tr>
             
