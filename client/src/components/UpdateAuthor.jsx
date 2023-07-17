@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 const UpdateAuthorForm = (props) => {
+    const {allAuthors, setAllAuthors} = props;
     const [name, setName] = useState();
     const [errors, setErrors] = useState([]);
     const { id } = useParams();
@@ -22,6 +23,11 @@ const UpdateAuthorForm = (props) => {
         axios.patch(`http://127.0.0.1:8000/api/authors/update/${id}`, {name: name})
             .then((res) => {
                 console.log(res.data);
+                const updatedAuthor = res.data;
+                const updatedAllAuthors = allAuthors.map( author => {
+                    return author._id === updatedAuthor._id ? updatedAuthor : author;
+                })
+                setAllAuthors(updatedAllAuthors);
                 navigate('/authors')
                 })
             .catch((err) => {
